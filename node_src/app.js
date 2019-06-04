@@ -6,6 +6,10 @@ const forcast = require('./utils/forcast.js');
 
 const app = express();
 
+// Create link to Angular build directory
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
+
 app.get('/api/weather', (req, res) => {
     let address = req.query.address;
     geocode(address, (error, response) => {
