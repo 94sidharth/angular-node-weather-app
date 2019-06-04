@@ -1,5 +1,6 @@
 const express = require('express');
 const port = process.env.PORT || 3000;
+const path = require('path');
 
 const geocode = require('./utils/geocode.js');
 const forcast = require('./utils/forcast.js');
@@ -7,8 +8,9 @@ const forcast = require('./utils/forcast.js');
 const app = express();
 
 // Create link to Angular build directory
-var distDir = __dirname + "/dist/";
+var distDir = path.join(__dirname , "../dist/");
 app.use(express.static(distDir));
+console.log(distDir);
 
 app.get('/api/weather', (req, res) => {
     let address = req.query.address;
