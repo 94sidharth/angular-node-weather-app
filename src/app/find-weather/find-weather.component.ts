@@ -38,7 +38,7 @@ export class FindWeatherComponent implements OnInit {
         }
       },
         error => {
-          console.log(error);
+          this.openSnackBar("Unexpected error occurred", "Dismiss")
         })
     }
 
