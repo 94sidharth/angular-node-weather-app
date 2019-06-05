@@ -4,13 +4,14 @@ const path = require('path');
 
 const geocode = require('./utils/geocode.js');
 const forcast = require('./utils/forcast.js');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 
 // Create link to Angular build directory
-var distDir = path.join(__dirname , "../dist/");
+var distDir = path.join(__dirname, "../dist/");
 app.use(express.static(distDir));
-console.log(distDir);
 
 app.get('/api/weather', (req, res) => {
     let address = req.query.address;

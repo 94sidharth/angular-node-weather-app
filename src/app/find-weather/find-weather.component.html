@@ -1,3 +1,20 @@
-<input type="text" [(ngModel)]="address">
-<button (click)="findWeather()">Fetch Weather</button>
-<p>{{weatherInfo}}</p>
+<div class="containerClass">
+    <div>
+        <h2 style="color:#73768a;">Find Your Weather</h2>
+    </div>
+    <div style="margin-top: 15px;">
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Location" [(ngModel)]="address" name="location">
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div>
+        <button mat-stroked-button (click)="findWeather()">Fetch Weather</button>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <p style="color:#3f51b5;font-size: larger;">{{weatherInfo}}</p>
+    </div>
+</div>

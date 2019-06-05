@@ -7,8 +7,10 @@ export class FindWeatherServiceComponent {
     constructor(public http: HttpClient) {
     }
 
+
+
     getWeather(address) {
-        let url = "/api/weather?address=" + address;
+        let url = "http://localhost:3000/api/weather?address=" + address;
         return this.http.get(url);
     }
 }
